@@ -19,9 +19,19 @@
                             {
                                echo $row['username']."</br>";
                             }*/
-                            $res = User::find_user_by_id(23);      
+                            /*$res = User::find_user_by_id(23);      
                             $user = User::instantation($res);                   
                             echo $user->username;
+                            */
+                            /*$res = User::find_all_users();
+                            //var_dump($res);
+                            //print_r($res);
+                            foreach ($res as $key ) {
+                                echo $key->first_name."</br>";
+                            }*/
+                            $res = User::find_user_by_id(22);                                                
+                            echo $res->username;
+
                            
                         ?>       
                                   
