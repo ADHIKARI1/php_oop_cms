@@ -1,12 +1,6 @@
 <?php
-
-/*require_once("includes/init.php");
-
-if(!$session->is_signed_in()) {
-redirect("login.php");
-}*/
-
-require_once("includes/header.php"); 
+include_once("includes/header.php"); 
+include_once("includes/init.php"); 
 
 ?>
         <!-- Navigation -->
