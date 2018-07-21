@@ -29,8 +29,40 @@
                             foreach ($res as $key ) {
                                 echo $key->first_name."</br>";
                             }*/
-                            $res = User::find_user_by_id(22);                                                
-                            echo $res->username;
+                           /* $res = User::find_user_by_id(22);                                                
+                            echo $res->username;*/
+
+                            /*$user = new User();
+                            $user->username = "some";
+                            $user->password = "1234";
+                            $user->first_name = "john";
+                            $user->last_name = "Doe";
+
+                            $user->create();
+                            echo $user->id;*/
+
+                            /*$res = User::find_user_by_id(24);
+                            $res->username = "oii";
+                            $res->update();*/
+
+                            /*$res = User::find_user_by_id(30);
+                            $res->delete();*/
+
+                           /* $res = User::find_user_by_id(25);
+                            $res->username="hmm k";
+                            $res->save();*/
+
+                           /* $res = new User();
+                            $res->username="wowww";
+                            $res->save();*/
+
+                            
+
+
+                           
+                           
+
+
 
                            
                         ?>       

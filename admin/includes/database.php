@@ -2,7 +2,7 @@
 require_once ("config.php");
 
 class Database{
-	private $con;
+	public $con;
 
 	function __construct()
 	{
@@ -36,6 +36,11 @@ class Database{
 	{
 		$esc_string = mysqli_real_escape_string($this->con, $string);
 		return $esc_string;
+	}
+
+	public function the_insert_id()
+	{
+		return mysqli_insert_id($this->con);
 	}
 }
 
