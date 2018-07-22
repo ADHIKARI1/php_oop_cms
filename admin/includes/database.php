@@ -22,8 +22,15 @@ class Database{
 
 	public function query($sql)
 	{
+		//echo "db ".$sql."</br>";
 		$result = mysqli_query($this->con, $sql);
-		return $result;
+		if ( false===$result )
+  			printf("error: %s\n", mysqli_error($this->con));		
+		else
+		 	return $result;
+
+		//echo $result;
+		
 	}
 
 	private function confirm_query($result)

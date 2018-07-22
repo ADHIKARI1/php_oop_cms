@@ -32,14 +32,14 @@
                            /* $res = User::find_user_by_id(22);                                                
                             echo $res->username;*/
 
-                            $user = new User();
+                           /* $user = new User();
                             $user->username = "bijja";
                             $user->password = "123469";
                             $user->first_name = "john";
                             $user->last_name = "Dane";
 
                             $user->create();
-                            echo $user->id;
+                            echo $user->id;*/
 
                             /*$res = User::find_user_by_id(26);                         
                             $res->username = "kosa"; 
@@ -55,12 +55,32 @@
                             $res->username="hmm k";
                             $res->save();*/
 
-                           /* $res = new User();
-                            $res->username="wowww";
+                            /*$res = new User();
+                            $res->username="pakka";
                             $res->save();*/
 
                             /*$arr = array("a", "b", "c");
                             echo implode("|", $arr);*/
+
+                            /*$res = User::find_all();
+                            foreach($res as $user)
+                            {
+                               echo $user->username."</br>";
+                            }*/
+                           /* $photo = Photo::find_all();
+                            foreach($photo as $pic)
+                            {
+                               echo $pic->description."</br>";
+                            }*/
+
+                            $photo = new Photo();
+                            $photo->title = "lemon";
+                            $photo->description = "owwww";
+                             $photo->alternate_text = "iobaa";
+                            $photo->type = "image/jpg";                           
+                            $photo->size = 112225;
+                            $photo->create();
+                            //echo $photo->title;
 
 
 
