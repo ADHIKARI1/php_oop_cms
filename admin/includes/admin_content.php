@@ -32,17 +32,20 @@
                            /* $res = User::find_user_by_id(22);                                                
                             echo $res->username;*/
 
-                            /*$user = new User();
-                            $user->username = "some";
-                            $user->password = "1234";
+                            $user = new User();
+                            $user->username = "bijja";
+                            $user->password = "123469";
                             $user->first_name = "john";
-                            $user->last_name = "Doe";
+                            $user->last_name = "Dane";
 
                             $user->create();
-                            echo $user->id;*/
+                            echo $user->id;
 
-                            /*$res = User::find_user_by_id(24);
-                            $res->username = "oii";
+                            /*$res = User::find_user_by_id(26);                         
+                            $res->username = "kosa"; 
+                            $res->password = "15858iko";
+                            $res->first_name = "bokkaoko";                           
+                           // echo  $res->username;
                             $res->update();*/
 
                             /*$res = User::find_user_by_id(30);
@@ -56,7 +59,10 @@
                             $res->username="wowww";
                             $res->save();*/
 
-                            
+                            /*$arr = array("a", "b", "c");
+                            echo implode("|", $arr);*/
+
+
 
 
                            
