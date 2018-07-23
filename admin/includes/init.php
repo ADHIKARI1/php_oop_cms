@@ -1,4 +1,10 @@
 <?php
+
+defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
+define('SITE_ROOT', 'C:'.DS.'wamp'.DS.'www'.DS.'oop_project');
+defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS.'admin'.DS.'includes');
+
+
 require_once("functions.php");
 include_once("config.php");
 include_once("database.php");

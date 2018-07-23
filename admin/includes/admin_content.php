@@ -21,16 +21,16 @@
                             }*/
                             /*$res = User::find_user_by_id(23);      
                             $user = User::instantation($res);                   
-                            echo $user->username;
-                            */
+                            echo $user->username;*/
+                            
                             /*$res = User::find_all_users();
                             //var_dump($res);
                             //print_r($res);
                             foreach ($res as $key ) {
                                 echo $key->first_name."</br>";
                             }*/
-                           /* $res = User::find_user_by_id(22);                                                
-                            echo $res->username;*/
+                            /*$res = Photo::find_by_id(8);                                                
+                            echo $res->type;*/
 
                            /* $user = new User();
                             $user->username = "bijja";
@@ -73,14 +73,14 @@
                                echo $pic->description."</br>";
                             }*/
 
-                            $photo = new Photo();
+                            /*$photo = new Photo();
                             $photo->title = "lemon";
                             $photo->description = "owwww";
                              $photo->alternate_text = "iobaa";
                             $photo->type = "image/jpg";                           
                             $photo->size = 112225;
-                            $photo->create();
-                            //echo $photo->title;
+                            $photo->create();*/
+                            // echo INCLUDES_PATH;
 
 
 
