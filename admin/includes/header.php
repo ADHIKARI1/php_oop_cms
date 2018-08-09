@@ -28,6 +28,8 @@ require_once("init.php");
     
     <link href="css/style.css" rel="stylesheet" type="text/css">
 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

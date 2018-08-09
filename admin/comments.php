@@ -1,5 +1,10 @@
 <?php
 require_once("includes/header.php"); 
+if(!$session->is_signed_in()) redirect_to("login.php");
+?>
+<?php
+$comments = Comment::find_all();
+
 
 ?>
         <!-- Navigation -->
@@ -24,9 +29,37 @@ require_once("includes/header.php");
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Comments
-                            <small> Statistics Overview</small>
-                        </h1>                  
+                            Comments                            
+                        </h1>
+                        <a href="add_user.php" class="btn btn-primary">Add User</a>
+                        <br>
+                        <div class="col-md-12">
+                            <table class="table table-hover">
+                                <thead>                                                                    
+                                    <tr>                                        
+                                        <th>ID</th>                                        
+                                        <th>Username</th>
+                                        <th>First Name</th>                                        
+                                    </tr>                                
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($comments as $comment) :  ?>  
+                                    <tr>
+                                        <td>
+                                            <?php echo $comment->id; ?>
+                                        </td>                                 
+                                        <td>
+                                            <?php echo $comment->author; ?>
+                                            <div class="action_links"> 
+                                                <a href="delete_comment.php?id=<?php echo $comment->id; ?>">Delete</a>                                                          
+                                            </div>
+                                        </td>
+                                        <td><?php echo $comment->body; ?></td>                                        
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>                  
                         <ol class="breadcrumb">
                             <li class="active">
                                 <i class="fa fa-dashboard"></i> Dashboard

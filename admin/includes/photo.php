@@ -85,15 +85,8 @@ public function save()
 		else{			
 			$this->errors[] = "the file directory need permissions!";
 			return false;
-
 		}
-
-		
-
-	}
-
-
-	
+	}	
 }
 
 public function delete_photo()
@@ -101,6 +94,7 @@ public function delete_photo()
 	if ($this->delete()) {
 		$target_path  = SITE_ROOT.DS.'admin'.DS.$this->picture_path();
 		return unlink($target_path);
+		
 	}
 	else
 	{

@@ -3,7 +3,31 @@ require_once("includes/header.php");
 if(!$session->is_signed_in()) redirect_to("login.php");
 ?>
 <?php
-$photo = Photo::find_all();
+
+if (empty($_GET['id'])) {
+    redirect_to("photos.php");
+}
+else
+{
+    $photo = Photo::find_by_id($_GET['id']);
+    if (isset($_POST['update'])) {
+        if ($photo) {
+
+            $photo->title = $_POST['title'];
+            $photo->caption = $_POST['caption'];
+            $photo->alternate_text = $_POST['alternate_text'];
+            $photo->description = $_POST['description'];
+
+            $photo->Save();
+
+            
+        }
+    }
+}
+
+
+
+
 ?>
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -30,22 +54,27 @@ $photo = Photo::find_all();
                             Photos
                             <small> Statistics Overview</small>
                         </h1>
-                        <form action="edit_photo.php" method="post">
+                        <form action="" method="post">
                         <div class="col-md-8">
                             <div class="form-group">
-                                <input type="text" name = "title" class="form-control">
+                                <input type="text" name = "title" class="form-control" value="<?php echo $photo->title; ?>">
+                            </div>
+                            <div class="form-group">
+                                <a class="thumbnail" href="">
+                                    <img src="<?php echo $photo->picture_path(); ?>" width="150" height=="100">
+                                </a>
                             </div>
                             <div class="form-group">
                                 <label for="caption">Caption</label>
-                                <input type="text" name = "caption" class="form-control">
+                                <input type="text" name = "caption" class="form-control" value="<?php echo $photo->caption; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="caption">Alternate Text</label>
-                                <input type="text" name = "alternate_text" class="form-control">
+                                <input type="text" name = "alternate_text" class="form-control" value="<?php echo $photo->alternate_text; ?>">
                             </div>
                             <div class="form-group">
                                 <label for="caption">Description</label>
-                                <textarea class="form-control" name="description" cols="30" rows="10"></textarea>
+                                <textarea class="form-control" name="description" cols="30" rows="10"><?php echo $photo->description; ?></textarea>
                             </div>                                                      
                         </div>
 
