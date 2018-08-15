@@ -1,0 +1,9 @@
+.home-page-photo{
+	width: 200px !important;
+	height: 150px !important;
+}
+
+.pager .active a {
+	background-color: #000 !important;
+	color: #fff !important;
+}

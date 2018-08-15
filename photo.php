@@ -1,4 +1,4 @@
-<?php include("includes/header.php"); ?>
+
 
 <?php 
 
@@ -58,6 +58,8 @@ $comments = Comment::find_comments($photo->id);
 
 
  ?>
+ <?php include_once "includes/header.php"; ?>
+ <?php include_once "includes/navigation.php"; ?>
 
         <div class="row">
             <div class="col-lg-12">
@@ -149,7 +151,7 @@ $comments = Comment::find_comments($photo->id);
 <!--     <div class="col-md-4"> -->
 
     
-         <?php  include("includes/sidebar.php"); ?>
+         <?php  //include("includes/sidebar.php"); ?>
 
 
 
