@@ -1,5 +1,7 @@
 <?php
-require_once("includes/header.php"); 
+require_once("includes/header.php");
+require_once("includes/photo_lib_modal.php");
+
 if(!$session->is_signed_in()) redirect_to("login.php");
 ?>
 <?php
@@ -18,19 +20,28 @@ if (isset($_POST['update'])) {
         $user->first_name = $_POST['first_name'];
         $user->last_name = $_POST['last_name'];
 
-        if (empty($_FILES['user_image'])) {
+        if (empty($_FILES['user_image']['name'])) {
+            //unlink($user->image_path());
             $user->save();
+            $session->message("The user has been updated!");
+            redirect_to("users.php");
+            
         }
         else
         {
             $user->set_file($_FILES['user_image']);       
             $user->save_data();
-        }
+            $session->message("The user has been updated!");
+            redirect_to("users.php");
+           
+           
+        }      
 
-        
 
         
     }
+
+
 }
 
 
@@ -58,13 +69,13 @@ if (isset($_POST['update'])) {
             <div class="container-fluid">
                 <!-- Page Heading -->
                 <div class="row">
-                    
+                     <div class="col-md-12">                    
                         <h1 class="page-header">
                             users                            
                         </h1>
                         <form action="" method="post" enctype="multipart/form-data">
-                        <div class="col-md-4">
-                            <img class="img-responsive"  src="<?php echo $user->image_path(); ?>" width="200" height="200">
+                        <div class="col-md-6 user_image_box">
+                            <a href="" data-toggle="modal" data-target="#photo-library"><img class="img-responsive"  src="<?php echo $user->image_path(); ?>" width="200" height="200"></a>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -89,12 +100,13 @@ if (isset($_POST['update'])) {
                             </div>  
                              <div class="form-group">                               
                                 <input type="submit" name = "update" class="btn btn-primary pull-right" value="Update">
-                                <a class="btn btn-warning pull-left" href="delete_user.php?id=<?php echo $user->id; ?>">Delete</a>
+                                <a id="user-id" class="btn btn-warning pull-left" href="delete_user.php?id=<?php echo $user->id; ?>">Delete</a>
                             </div>                                                                             
                         </div>
 
                         
-                        </form>                        
+                        </form> 
+                        </div>                       
                     </div>
                 </div>
                 <!-- /.row -->

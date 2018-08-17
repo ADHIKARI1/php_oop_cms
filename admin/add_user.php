@@ -16,6 +16,8 @@ if(!$session->is_signed_in()) redirect_to("login.php");
 
             $user->set_file($_FILES['user_image']);
             $user->save_data();
+            $session->message("The {$user->username} user has been added!");
+            redirect_to("users.php");
 
             
         }

@@ -81,7 +81,7 @@ else
                         <div class="col-md-4">                        
                            <div class="photo-info-box side_style" >
                             <div class="info-box-header">
-                            <h4>Save <span id="toggle" class="glyphicon glyphicon-menu-up pull-right"></span></h4>                           
+                            <h4>Save <span id="toggle" class="glyphicon glyphicon-menu-down pull-right"></span></h4>                           
                             </div>                               
                             <div class="inside">
                              <div class="box-inner">

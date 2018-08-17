@@ -8,10 +8,13 @@ function __autoload($class)
 	$class = strtolower($class);
 	$path = "includes/{$class}.php";
 	$path2 = "admin/includes/{$class}.php";
+	$path3 = "{$class}.php";
 	if (file_exists($path))
 		require_once($path);
 	else if (file_exists($path2))
 		require_once($path2);
+	else if (file_exists($path3))
+		require_once($path3);
 	else
 		die("File name {$class}.php not found!");	
 	

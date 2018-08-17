@@ -100,13 +100,35 @@ public function delete_user()
 {
 if($this->delete()) {
 	$this->target_path  = SITE_ROOT.DS.'admin'.DS.$this->upload_dir.DS.$this->user_image;
-	return unlink($this->target_path);
+	return unlink($this->target_path) ? true : false;
 	
 }
 else
 {
 	return false;
 }
+}
+
+public function ajax_save_user_image($user_image, $user_id)
+{
+	/*$this->user_image = $user_image;
+	$this->id = $user_id;
+	$this->save();*/
+
+	global $db;
+
+	$user_image = $db->escape_string($user_image);
+	$user_id = $db->escape_string($user_id);
+
+	$this->user_image = $user_image;
+	$this->id = $user_id;
+
+	$sql = "UPDATE ".self::$db_table." SET user_image = '{$this->user_image}'";	
+	$sql.=" WHERE id = ".$db->escape_string($this->id);
+
+	$update_image = $db->query($sql);
+
+	echo $this->image_path();
 }
 	
 
